@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { ToolBar } from "./components/ToolBar";
+import { ToolBar, MadeWith } from "../app/exports/components/exports";
 
 const Main: React.FC = () => {
   return (
@@ -15,11 +15,12 @@ const Main: React.FC = () => {
         opacity: 1,
         scale: 1,
         transition: {
-          duration: 1.5,
+          duration: 0.8,
         },
       }}
     >
-      <div className="w-screen h-screen portfolio-bg flex items-end justify-center">
+      <div className="w-screen h-screen portfolio-bg flex flex-col items-center justify-between">
+        <MadeWith />
         <ToolBar />
       </div>
     </motion.div>
