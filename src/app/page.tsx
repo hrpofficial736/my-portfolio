@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { ToolBar, MadeWith } from "../app/exports/components/exports";
+import { ToolBar, MadeWith, Menus } from "../app/exports/components/exports";
 
 const Main: React.FC = () => {
   return (
@@ -21,6 +21,9 @@ const Main: React.FC = () => {
     >
       <div className="w-screen h-screen portfolio-bg flex flex-col items-center justify-between">
         <MadeWith />
+        <div className="flex justify-end items-center">
+          <Menus />
+        </div>
         <ToolBar />
       </div>
     </motion.div>

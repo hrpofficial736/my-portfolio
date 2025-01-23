@@ -8,27 +8,27 @@ export const ToolBar: React.FC = () => {
       <Image
         src={Pdf}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl glassmorphism"
+        className="h-[80%] w-[20%] rounded-2xl glassmorphism cursor-pointer"
       />
       <Image
         src={Mail}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl glassmorphism"
+        className="h-[80%] w-[20%] rounded-2xl glassmorphism cursor-pointer"
       />
       <Image
         src={Web}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl glassmorphism"
+        className="h-[80%] w-[20%] rounded-2xl glassmorphism cursor-pointer"
       />
       <Image
         src={Flutter}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl glassmorphism"
+        className="h-[80%] w-[20%] rounded-2xl glassmorphism cursor-pointer"
       />
       <Image
         src={Contact}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl glassmorphism"
+        className="h-[80%] w-[20%] rounded-2xl glassmorphism cursor-pointer"
       />
     </main>
   );
