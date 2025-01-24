@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-} */
-/*
-body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
 .portfolio-bg {
     background-image: url("../../public/assets/wallpapers/desktop-bg.svg");
     background-size: cover;
@@ -36,4 +18,22 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3); /* Translucent border */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-radius: 15px;
+}
+
+.glassmorphism-without-border {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 15px;
+}
+
+@font-face {
+    font-family: "MerriWeather";
+    src: url("../../public/assets/fonts/Merriweather/Merriweather-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Poiret";
+    src: url("../../public/assets/fonts/Poiret_One/PoiretOne-Regular.ttf");
 }
