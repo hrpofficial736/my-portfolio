@@ -8,7 +8,7 @@ export const ToolBar: React.FC = () => {
       <Image
         src={Pdf}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-white/90 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-white to-white/70 cursor-pointer"
       />
       <Image
         src={Mail}
@@ -18,7 +18,7 @@ export const ToolBar: React.FC = () => {
       <Image
         src={Web}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-blue-200 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-white to-blue-300 cursor-pointer"
       />
       <Image
         src={Flutter}
@@ -28,7 +28,7 @@ export const ToolBar: React.FC = () => {
       <Image
         src={Contact}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-green-800 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-green-600 to-green-800 cursor-pointer"
       />
     </main>
   );

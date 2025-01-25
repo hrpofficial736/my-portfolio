@@ -7,6 +7,7 @@ import {
   MadeWith,
   Menus,
   Weather,
+  DateTime,
 } from "../app/exports/components/exports";
 
 const Main: React.FC = () => {
@@ -24,12 +25,13 @@ const Main: React.FC = () => {
         },
       }}
     >
-      <div className="w-screen h-screen portfolio-bg flex flex-col items-center justify-between">
-        <MadeWith />
+      <div className="w-screen h-screen portfolio-bg relative flex flex-col items-center justify-between">
+        <DateTime />
         <div className="flex w-full justify-between">
           <Menus />
           <Weather />
         </div>
+        <MadeWith />
         <ToolBar />
       </div>
     </motion.div>

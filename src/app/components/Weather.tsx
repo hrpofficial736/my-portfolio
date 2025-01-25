@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 export const Weather: React.FC = () => {
   return (
-    <main className="glassmorphism h-max px-3 py-3 mr-20 w-max flex flex-col gap-y-2 text-white">
+    <main className="glassmorphism h-max px-3 py-3 absolute right-12 top-14 w-max flex flex-col gap-y-2 text-white">
       <div className="flex gap-x-3 font-[Poiret] font-bold text-3xl ">
         ☁️{" "}
         <div className="flex flex-col items-center">
