@@ -1,7 +1,20 @@
-import React from "react";
-import { CiLocationOn } from "react-icons/ci";
+"use client";
 
-export const Weather: React.FC = () => {
+import React, { useEffect } from "react";
+import { CiLocationOn } from "react-icons/ci";
+import { fetchUserLocation } from "../../../lib/geoLocationApi";
+import fetchWeatherFromApi from "../../../lib/weatherApi";
+
+export default function Weather() {
+  useEffect(() => {
+    async function fetchWeather() {
+      const location = await fetchUserLocation();
+      const weatherData = await fetchWeatherFromApi(location);
+      console.log(weatherData);
+      return weatherData;
+    }
+    fetchWeather();
+  }, []);
   return (
     <main className="glassmorphism h-max px-3 py-3 absolute right-12 top-14 w-max flex flex-col gap-y-2 text-white">
       <div className="flex gap-x-3 font-[Poiret] font-bold text-3xl ">
@@ -15,4 +28,4 @@ export const Weather: React.FC = () => {
       </p>
     </main>
   );
-};
+}

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { Next } from "../exports/assets/exports";
+import { Next } from "../../../exports/assets/exports";
 
 export const LogoAnimation: React.FC = () => {
   const [activeDiv, setActiveDiv] = useState(1);

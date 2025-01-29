@@ -9,7 +9,7 @@ import {
   Github,
   LinkedIn,
   FullScreen,
-} from "../exports/assets/exports";
+} from "../../../exports/assets/exports";
 
 export const Menus: React.FC = () => {
   const goFullscreen = () => {

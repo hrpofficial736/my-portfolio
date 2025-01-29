@@ -1,5 +1,11 @@
 import React from "react";
-import { Pdf, Mail, Flutter, Web, Contact } from "../exports/assets/exports";
+import {
+  Pdf,
+  Mail,
+  Flutter,
+  Web,
+  Contact,
+} from "../../../exports/assets/exports";
 import Image from "next/image";
 
 export const ToolBar: React.FC = () => {

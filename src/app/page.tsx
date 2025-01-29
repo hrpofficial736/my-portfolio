@@ -8,7 +8,7 @@ import {
   Menus,
   Weather,
   DateTime,
-} from "../app/exports/components/exports";
+} from "../../exports/components/exports";
 
 const Main: React.FC = () => {
   return (
