@@ -2,9 +2,9 @@ import React from "react";
 import {
   Pdf,
   Mail,
-  Flutter,
   Web,
   Contact,
+  Github,
 } from "../../../exports/assets/exports";
 import Image from "next/image";
 
@@ -19,22 +19,22 @@ export const ToolBar: React.FC = () => {
       <Image
         src={Mail}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-indigo-700 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl p-1 bg-indigo-700 cursor-pointer"
       />
       <Image
         src={Web}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-white to-blue-300 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl p-2 bg-gradient-to-b from-white to-blue-300 cursor-pointer"
       />
       <Image
-        src={Flutter}
+        src={Github}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-white to-blue-300 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl p-1 bg-gradient-to-b from-white/60 to-white cursor-pointer"
       />
       <Image
         src={Contact}
         alt="Pdf"
-        className="h-[80%] w-[20%] rounded-2xl bg-gradient-to-b from-green-600 to-green-800 cursor-pointer"
+        className="h-[80%] w-[20%] rounded-2xl p-1 bg-gradient-to-b from-green-600 to-green-800 cursor-pointer"
       />
     </main>
   );
