@@ -53,7 +53,7 @@ export const Menus: React.FC<MenuProps> = ({ callback }) => {
         </div>
         <div
           onClick={() => {
-            callback(500, 500);
+            callback(1350, 700);
           }}
           className="flex-col flex gap-y-2 justify-center items-center max-w-[80px]"
         >
