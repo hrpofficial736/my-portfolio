@@ -35,6 +35,7 @@ const Main: React.FC = () => {
   const handleCloseWindow = () => setWindowOpen(false);
   return (
     <motion.div
+      className="z-10"
       initial={{
         opacity: 0,
         scale: 1.1,
@@ -62,23 +63,13 @@ const Main: React.FC = () => {
           <ToolBar />
         </div>
         <AnimatePresence>
-        {windowOpen && (
-          <motion.div
-            key="window" // Unique key for Framer Motion to track component
-            initial={{ scale: 0.8, opacity: 0 }} // Start small and invisible
-            animate={{ scale: 1, opacity: 1 }} // Animate to full size
-            exit={{ scale: 0.8, opacity: 0 }} // Animate on exit
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          {windowOpen && (
             <Window
               width={windowDimensions.width}
               height={windowDimensions.height}
-              isHidden={!windowOpen}
               callback={handleCloseWindow}
             />
-            
-          </motion.div>
-        )}
+          )}
         </AnimatePresence>
       </div>
     </motion.div>
