@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ubuntuFont } from "./Menus";
 
 export const DateTime: React.FC = () => {
   const [date, setDate] = useState(new Date());
@@ -17,7 +18,9 @@ export const DateTime: React.FC = () => {
   }, []);
 
   return (
-    <main className="glassmorphism mt-3 flex gap-x-3 text-white font-semibold px-2 py-1">
+    <main
+      className={`glassmorphism ${ubuntuFont.className} mt-3 flex gap-x-3 text-black/80 font-semibold px-2 py-1`}
+    >
       <p>{formattedDate}</p>
       <p>{time}</p>
     </main>

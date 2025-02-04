@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import {
   ToolBar,
   MadeWith,
@@ -62,15 +62,12 @@ const Main: React.FC = () => {
           <MadeWith />
           <ToolBar />
         </div>
-        <AnimatePresence>
-          {windowOpen && (
-            <Window
-              width={windowDimensions.width}
-              height={windowDimensions.height}
-              callback={handleCloseWindow}
-            />
-          )}
-        </AnimatePresence>
+        <Window
+          width={windowDimensions.width}
+          height={windowDimensions.height}
+          callback={handleCloseWindow}
+          isHidden={!windowOpen} // This will now only trigger animations, not unmounting
+        />
       </div>
     </motion.div>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .portfolio-bg {
-    background-image: url("../../public/assets/wallpapers/desktop-bg.svg");
+    background-image: url("../../public/assets/wallpapers/bg.jpg");
     background-size: cover;
 }
 
@@ -29,13 +29,11 @@
 }
 
 .dull-background {
-    background-image: url("../../public/assets/wallpapers/desktop-bg.svg");
+    background-image: url("../../public/assets/wallpapers/bg.jpg");
     background-size: cover;
     filter: brightness(0.7);
     filter: blur(2px);
-    
 }
-
 
 @font-face {
     font-family: "MerriWeather";

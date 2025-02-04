@@ -33,6 +33,7 @@ export const LogoAnimation: React.FC = () => {
         </motion.div>
       ) : (
         <motion.div
+          className="ml-0.5"
           animate={{
             y: ["+100%", "0%", "0%", "-100%"],
           }}

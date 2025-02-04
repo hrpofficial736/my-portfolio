@@ -10,10 +10,16 @@ import {
   FullScreen,
 } from "../../../exports/assets/exports";
 import { useRouter } from "next/navigation";
+import { Ubuntu } from "next/font/google";
 
 interface MenuProps {
   callback: (width: number, height: number) => void;
 }
+
+export const ubuntuFont = Ubuntu({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const Menus: React.FC<MenuProps> = ({ callback }) => {
   const goFullscreen = () => {
@@ -25,10 +31,10 @@ export const Menus: React.FC<MenuProps> = ({ callback }) => {
   const router = useRouter();
   return (
     <main
-      className={`w-max absolute top-14 left-2 px-3 py-3 flex items-center text-white text-sm`}
+      className={`w-max ${ubuntuFont.className} absolute top-14 left-2 px-3 py-3 flex items-center text-white text-sm`}
     >
       <div className="grid grid-rows-3 gap-y-7 gap-x-3 justify-center items-center grid-cols-2">
-        <div className="flex-col flex gap-y-2 justify-center items-center max-w-[80px]">
+        <div className="flex-col flex gap-y-2 justify-center hover:glassmorphism items-center max-w-[80px]">
           <Image
             src={Pdf}
             alt="Pdf"
