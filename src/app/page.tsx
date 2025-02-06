@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import {
   ToolBar,
   MadeWith,
@@ -43,9 +43,10 @@ const Main: React.FC = () => {
       animate={{
         opacity: 1,
         scale: 1,
-        transition: {
-          duration: 0.8,
-        },
+      }}
+      transition={{
+        type: "tween",
+        duration: 1,
       }}
     >
       <div className="relative">

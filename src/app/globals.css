@@ -7,7 +7,7 @@
     background-size: cover;
 }
 
-:root::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar {
     display: none;
 }
 
@@ -24,6 +24,15 @@
     background-color: transparent;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 15px;
+}
+
+#menu-bg:hover {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Translucent border */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-radius: 15px;
 }

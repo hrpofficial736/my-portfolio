@@ -45,7 +45,7 @@ export default function Weather() {
           </p>
         </div>
       </div>
-      <p className="flex gap-x-2 items-center">
+      <p className="flex gap-x-2 items-center justify-center">
         <CiLocationOn />
         {locationInWords ? locationInWords : "Fetching your location..."}
       </p>

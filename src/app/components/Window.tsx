@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
+import { ProjectComponent } from "../../../exports/components/exports";
+import {
+  DesktopBg,
+  Next,
+  Github,
+  Flutter,
+} from "../../../exports/assets/exports";
 
 interface WindowProps {
   width: number;
@@ -41,7 +48,7 @@ export const Window: React.FC<WindowProps> = ({
         >
           <main
             style={{ width: `${width}px`, height: `${height}px` }}
-            className="bg-gradient-to-tr from-black to-black/60 rounded-xl flex flex-col px-5 py-3"
+            className="bg-gradient-to-tr from-black to-black/60 rounded-xl flex flex-col gap-y-10 px-5 py-3 no-scrollbar overflow-y-scroll"
           >
             <div className="flex justify-between items-center">
               <h1 className="text-white font-bold text-2xl">Projects</h1>
@@ -53,6 +60,43 @@ export const Window: React.FC<WindowProps> = ({
                 color="white"
                 size={25}
                 className="cursor-pointer"
+              />
+            </div>
+            <div className="border border-white w-[80%] mx-auto flex flex-col gap-y-5 rounded-md px-3 py-2">
+              <ProjectComponent
+                image={DesktopBg}
+                title="BlogVerse"
+                description="My description"
+                isLive={false}
+                stack={[Next, Github]}
+              />
+              <ProjectComponent
+                image={DesktopBg}
+                title="BlogVerse"
+                description="My description"
+                isLive={false}
+                stack={[Flutter]}
+              />
+              <ProjectComponent
+                image={DesktopBg}
+                title="BlogVerse"
+                description="My description"
+                isLive={false}
+                stack={[]}
+              />
+              <ProjectComponent
+                image={DesktopBg}
+                title="BlogVerse"
+                description="My description"
+                isLive={false}
+                stack={[]}
+              />
+              <ProjectComponent
+                image={DesktopBg}
+                title="BlogVerse"
+                description="My description"
+                isLive={false}
+                stack={[]}
               />
             </div>
           </main>
