@@ -9,6 +9,7 @@ interface ProjectComponentProps {
   title: string;
   description: string;
   isLive: boolean;
+  isMobile: boolean;
   stack: StaticImageData[];
 }
 
@@ -16,6 +17,7 @@ export const ProjectComponent: React.FC<ProjectComponentProps> = ({
   image,
   title,
   description,
+  isMobile,
   isLive,
   stack,
 }) => {
@@ -26,9 +28,9 @@ export const ProjectComponent: React.FC<ProjectComponentProps> = ({
       <Image
         alt={title}
         src={image}
-        className="w-[500px] h-[250px] rounded-xl border border-white"
+        className={`${isMobile ? "w-[300px] h-[600px] rounded-2xl" : "w-[500px] h-[250px] rounded-xl"} border border-white`}
       />
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col justify-center gap-y-1">
         <h1 className="font-bold text-2xl">{title}</h1>
         <div className="flex gap-x-1">
           {stack.map((tech, index) => {
@@ -51,11 +53,11 @@ export const ProjectComponent: React.FC<ProjectComponentProps> = ({
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </h1>
-        <div className="flex gap-x-3">
-          <button className="rounded-xl bg-indigo-500 text-white px-3 py-2 font-bold flex gap-x-2 justify-center items-center">
+        <div className="flex gap-x-3 mt-3">
+          <button className="rounded-xl bg-indigo-500 text-white px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-indigo-700">
             <TbLiveView /> Go Live
           </button>
-          <button className="rounded-xl bg-white text-black px-3 py-2 font-bold flex gap-x-2 justify-center items-center">
+          <button className="rounded-xl bg-white text-black px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-white/80">
             <FaGithub color="black" /> Github
           </button>
         </div>

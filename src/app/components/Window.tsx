@@ -8,6 +8,7 @@ import {
   Github,
   Flutter,
 } from "../../../exports/assets/exports";
+import { Sociogram } from "../../../exports/projects-assets/exports";
 
 interface WindowProps {
   width: number;
@@ -31,7 +32,7 @@ export const Window: React.FC<WindowProps> = ({
   }, [isHidden]);
 
   return (
-    <AnimatePresence mode="sync" onExitComplete={() => setVisible(false)}>
+    <AnimatePresence mode="wait" onExitComplete={() => setVisible(false)}>
       {visible && (
         <motion.div
           key="window"
@@ -69,34 +70,15 @@ export const Window: React.FC<WindowProps> = ({
                 description="My description"
                 isLive={false}
                 stack={[Next, Github]}
+                isMobile={false}
               />
               <ProjectComponent
-                image={DesktopBg}
-                title="BlogVerse"
+                image={Sociogram}
+                title="Sociogram"
                 description="My description"
                 isLive={false}
                 stack={[Flutter]}
-              />
-              <ProjectComponent
-                image={DesktopBg}
-                title="BlogVerse"
-                description="My description"
-                isLive={false}
-                stack={[]}
-              />
-              <ProjectComponent
-                image={DesktopBg}
-                title="BlogVerse"
-                description="My description"
-                isLive={false}
-                stack={[]}
-              />
-              <ProjectComponent
-                image={DesktopBg}
-                title="BlogVerse"
-                description="My description"
-                isLive={false}
-                stack={[]}
+                isMobile={true}
               />
             </div>
           </main>
