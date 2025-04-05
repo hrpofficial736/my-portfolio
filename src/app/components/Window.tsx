@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProjectComponent } from "../../../exports/components/exports";
@@ -8,7 +7,11 @@ import {
   Github,
   Flutter,
 } from "../../../exports/assets/exports";
-import { Sociogram } from "../../../exports/projects-assets/exports";
+import { useEffect, useState } from "react";
+import Sociogram from "./projects/Sociogram";
+import BlogVerse from "./projects/BlogVerse";
+import FlashCV from "./projects/FlashCV";
+import Resq from "./projects/Resq";
 
 interface WindowProps {
   width: number;
@@ -63,22 +66,38 @@ export const Window: React.FC<WindowProps> = ({
                 className="cursor-pointer"
               />
             </div>
-            <div className="border border-white w-[80%] mx-auto flex flex-col gap-y-5 rounded-md px-3 py-2">
+            <div className="w-[80%] mx-auto flex flex-col gap-y-5 rounded-md px-3 py-2">
               <ProjectComponent
-                image={DesktopBg}
                 title="BlogVerse"
                 description="My description"
-                isLive={false}
+                isLive={true}
                 stack={[Next, Github]}
                 isMobile={false}
+                imageComponent={<BlogVerse />}
               />
+                <ProjectComponent
+                  title="FlashCV"
+                  description="My description"
+                  isLive={true}
+                  stack={[Next, Github]}
+                  isMobile={false}
+                  imageComponent={<FlashCV />}
+                />
               <ProjectComponent
-                image={Sociogram}
                 title="Sociogram"
                 description="My description"
                 isLive={false}
                 stack={[Flutter]}
                 isMobile={true}
+                imageComponent={<Sociogram />}
+              />
+              <ProjectComponent
+                title="resQ"
+                description="My description"
+                isLive={false}
+                stack={[Flutter]}
+                isMobile={true}
+                imageComponent={<Resq />}
               />
             </div>
           </main>

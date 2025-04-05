@@ -57,3 +57,8 @@ body::-webkit-scrollbar {
     font-family: "Poiret";
     src: url("../../public/assets/fonts/Poiret_One/PoiretOne-Regular.ttf");
 }
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../../public/assets/fonts/Poppins/Poppins-Bold.ttf");
+}

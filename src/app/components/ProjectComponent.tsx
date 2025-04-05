@@ -1,35 +1,32 @@
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { ReactElement } from "react";
 import { ubuntuFont } from "./Menus";
 import { FaGithub } from "react-icons/fa";
 import { TbLiveView } from "react-icons/tb";
 
 interface ProjectComponentProps {
-  image: string | StaticImageData;
   title: string;
   description: string;
   isLive: boolean;
   isMobile: boolean;
+  imageComponent: ReactElement;
   stack: StaticImageData[];
 }
 
 export const ProjectComponent: React.FC<ProjectComponentProps> = ({
-  image,
   title,
   description,
   isMobile,
+  imageComponent,
   isLive,
   stack,
 }) => {
   return (
     <main
-      className={`flex ${ubuntuFont.className} text-white gap-x-20 border border-white rounded-md py-2`}
+      className={`flex ${ubuntuFont.className} text-white gap-x-20 rounded-md px-2 py-2`}
     >
-      <Image
-        alt={title}
-        src={image}
-        className={`${isMobile ? "w-[300px] h-[600px] rounded-2xl" : "w-[500px] h-[250px] rounded-xl"} border border-white`}
-      />
+    { imageComponent }
+
       <div className="flex flex-col justify-center gap-y-1">
         <h1 className="font-bold text-2xl">{title}</h1>
         <div className="flex gap-x-1">
@@ -54,9 +51,11 @@ export const ProjectComponent: React.FC<ProjectComponentProps> = ({
           culpa qui officia deserunt mollit anim id est laborum.
         </h1>
         <div className="flex gap-x-3 mt-3">
+          {isLive &&
           <button className="rounded-xl bg-indigo-500 text-white px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-indigo-700">
             <TbLiveView /> Go Live
           </button>
+}
           <button className="rounded-xl bg-white text-black px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-white/80">
             <FaGithub color="black" /> Github
           </button>

@@ -1,3 +1,3 @@
-import Sociogram from "../../public/assets/project-assets/images/sociogram-splash.jpeg";
+// import Sociogram from "../../public/assets/project-assets/images/sociogram.png";
 
-export { Sociogram };
+// export { Sociogram };
