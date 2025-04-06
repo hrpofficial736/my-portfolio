@@ -30,12 +30,14 @@ export const Window: React.FC<WindowProps> = ({
   isHidden,
 }) => {
   const [visible, setVisible] = useState(!isHidden);
-  const [dimensions, setDimensions] = useState<{
-    width: number;
-    height: number;
-  }>({
-    width: window.innerWidth - 50,
-    height: window.innerHeight - 100
+  const [dimensions, setDimensions] = useState(() => {
+    if (typeof window !== "undefined") {
+      return {
+        width: window.innerWidth - 50,
+        height: window.innerHeight - 100,
+      };
+    }
+    return { width: 800, height: 600 };
   });
 
   const handleResize = () => {
