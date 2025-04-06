@@ -32,17 +32,7 @@ body::-webkit-scrollbar {
   border-radius: 15px;
 }
 
-@media (max-width: 768px) {
-  .portfolio-bg {
-    background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
-    background-size: cover;
-  }
-  .dull-background {
-  background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
-  background-size: cover;
-  filter: brightness(0.7);
-  filter: blur(2px);
-}
+
   .glassmorphism {
     border: none;
     background: none;
@@ -55,7 +45,7 @@ body::-webkit-scrollbar {
     box-shadow: none;
     backdrop-filter: none;
   }
-}
+
 
 
 .dull-background {
@@ -63,6 +53,19 @@ body::-webkit-scrollbar {
   background-size: cover;
   filter: brightness(0.7);
   filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .portfolio-bg {
+    background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
+    background-size: cover;
+  }
+  .dull-background {
+  background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
+  background-size: cover;
+  filter: brightness(0.7);
+  filter: blur(2px);
+}
 }
 
 @font-face {
