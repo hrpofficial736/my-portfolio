@@ -4,7 +4,6 @@ import {
   Pdf,
   Mail,
   Web,
-  Contact,
   Github,
   LinkedIn,
   FullScreen,
