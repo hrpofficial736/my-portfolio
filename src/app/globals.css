@@ -37,6 +37,12 @@ body::-webkit-scrollbar {
     background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
     background-size: cover;
   }
+  .dull-background {
+  background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
+  background-size: cover;
+  filter: brightness(0.7);
+  filter: blur(2px);
+}
   .glassmorphism {
     border: none;
     background: none;
