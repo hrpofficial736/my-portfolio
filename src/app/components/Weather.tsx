@@ -32,7 +32,7 @@ export default function Weather() {
   }, []);
   return (
     <main
-      className={`glassmorphism ${ubuntuFont.className} h-max px-3 py-3 absolute right-12 top-14 w-max flex flex-col gap-y-2 text-white`}
+      className={`glassmorphism ${ubuntuFont.className} h-max px-3 py-3 absolute right-2 top-20 md:right-12 md:top-14 w-max flex flex-col gap-y-2 text-white`}
     >
       <div className="flex gap-x-3 font-[Poiret] font-bold text-3xl ">
         ☁️{" "}

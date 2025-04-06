@@ -8,7 +8,7 @@ const dancingScript = Dancing_Script({
 const BlogVerse = () => {
   return (
     <div
-      className={`bg-white min-w-[350px] h-[250px] text-5xl text-blue-500 ${dancingScript.className} rounded-xl flex justify-center items-center`}
+      className={`bg-white md:min-w-[350px] h-[250px] text-5xl text-blue-500 ${dancingScript.className} rounded-xl flex justify-center items-center`}
     >
       BlogVerse
     </div>

@@ -13,29 +13,14 @@ import { Window } from "./components/Window";
 
 const Main: React.FC = () => {
   const [windowOpen, setWindowOpen] = useState<boolean>(false);
-  const [windowDimensions, setWindowDimensions] = useState<{
-    width: number;
-    height: number;
-  }>({
-    width: 0,
-    height: 0,
-  });
-  const handleCallback = (width: number, height: number) => {
-    if (!windowOpen) {
-      setWindowDimensions(() => {
-        return {
-          width: width,
-          height: height,
-        };
-      });
-    }
+  const handleCallback = () => {
     setWindowOpen(!windowOpen);
   };
 
   const handleCloseWindow = () => setWindowOpen(false);
   return (
     <motion.div
-      className="z-10"
+      className="z-10 max-md:overflow-hidden"
       initial={{
         opacity: 0,
         scale: 1.1,
@@ -49,26 +34,21 @@ const Main: React.FC = () => {
         duration: 1,
       }}
     >
-      <div className="relative">
+      <div className="relative max-md:overflow-hidden">
         <div
-          className={`w-screen h-screen z-10 relative ${
+          className={`w-screen h-screen max-md:overflow-hidden z-10 relative ${
             windowOpen ? "dull-background" : "portfolio-bg"
           } flex flex-col items-center justify-between`}
         >
           <DateTime />
-          <div className="flex w-full justify-between">
+          <div className="flex w-full md:justify-between max-sm:justify-center">
             <Menus callback={handleCallback} />
             <Weather />
           </div>
           <MadeWith />
-          <ToolBar />
+          <ToolBar callback={handleCallback} />
         </div>
-        <Window
-          width={windowDimensions.width}
-          height={windowDimensions.height}
-          callback={handleCloseWindow}
-          isHidden={!windowOpen} // This will now only trigger animations, not unmounting
-        />
+        <Window callback={handleCloseWindow} isHidden={!windowOpen} />
       </div>
     </motion.div>
   );

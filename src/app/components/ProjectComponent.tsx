@@ -3,12 +3,14 @@ import React, { ReactElement } from "react";
 import { ubuntuFont } from "./Menus";
 import { FaGithub } from "react-icons/fa";
 import { TbLiveView } from "react-icons/tb";
+import Link from "next/link";
 
 interface ProjectComponentProps {
   title: string;
   description: string;
   isLive: boolean;
-  isMobile: boolean;
+  githubLink: string;
+  liveLink?: string;
   imageComponent: ReactElement;
   stack: StaticImageData[];
 }
@@ -16,18 +18,19 @@ interface ProjectComponentProps {
 export const ProjectComponent: React.FC<ProjectComponentProps> = ({
   title,
   description,
-  isMobile,
   imageComponent,
+  githubLink,
+  liveLink,
   isLive,
   stack,
 }) => {
   return (
     <main
-      className={`flex ${ubuntuFont.className} text-white gap-x-20 rounded-md px-2 py-2`}
+      className={`flex w-[100%] max-md:flex-col max-md:gap-y-2 ${ubuntuFont.className} text-white gap-x-20 rounded-md px-2 py-2`}
     >
-    { imageComponent }
+      {imageComponent}
 
-      <div className="flex flex-col justify-center gap-y-1">
+      <div className="flex w-full flex-col md:justify-center gap-y-1">
         <h1 className="font-bold text-2xl">{title}</h1>
         <div className="flex gap-x-1">
           {stack.map((tech, index) => {
@@ -41,24 +44,24 @@ export const ProjectComponent: React.FC<ProjectComponentProps> = ({
             );
           })}
         </div>
-        <h1 className="font-normal text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </h1>
+        <h1 className="font-normal text-sm mt-1">{description}</h1>
         <div className="flex gap-x-3 mt-3">
-          {isLive &&
-          <button className="rounded-xl bg-indigo-500 text-white px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-indigo-700">
-            <TbLiveView /> Go Live
-          </button>
-}
-          <button className="rounded-xl bg-white text-black px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-white/80">
+          {isLive && (
+            <Link href={liveLink!}>
+            <button
+              className="rounded-xl bg-indigo-500 text-white px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-indigo-700"
+            >
+              <TbLiveView /> Go Live
+            </button>
+            </Link>
+          )}
+          <Link href={githubLink}>
+          <button
+            className="rounded-xl bg-white text-black px-3 py-2 font-bold flex gap-x-2 justify-center items-center hover:bg-white/80"
+          >
             <FaGithub color="black" /> Github
           </button>
+          </Link>
         </div>
       </div>
     </main>

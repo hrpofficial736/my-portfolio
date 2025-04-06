@@ -3,62 +3,73 @@
 @tailwind utilities;
 
 .portfolio-bg {
-    background-image: url("../../public/assets/wallpapers/bg.jpg");
-    background-size: cover;
+  background-image: url("../../public/assets/wallpapers/bg.jpg");
+  background-size: cover;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .glassmorphism {
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Translucent border */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 15px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
 .glassmorphism-without-border {
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 15px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
-#menu-bg:hover {
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Translucent border */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 15px;
+@media (max-width: 768px) {
+  .portfolio-bg {
+    background-image: url("../../public/assets/wallpapers/mobile-bg.jpg");
+    background-size: cover;
+  }
+  .glassmorphism {
+    border: none;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .glassmorphism-without-border {
+    border: none;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
 }
+
 
 .dull-background {
-    background-image: url("../../public/assets/wallpapers/bg.jpg");
-    background-size: cover;
-    filter: brightness(0.7);
-    filter: blur(2px);
+  background-image: url("../../public/assets/wallpapers/bg.jpg");
+  background-size: cover;
+  filter: brightness(0.7);
+  filter: blur(2px);
 }
 
 @font-face {
-    font-family: "MerriWeather";
-    src: url("../../public/assets/fonts/Merriweather/Merriweather-Bold.ttf");
+  font-family: "MerriWeather";
+  src: url("../../public/assets/fonts/Merriweather/Merriweather-Bold.ttf");
 }
 
 @font-face {
-    font-family: "Poiret";
-    src: url("../../public/assets/fonts/Poiret_One/PoiretOne-Regular.ttf");
+  font-family: "Poiret";
+  src: url("../../public/assets/fonts/Poiret_One/PoiretOne-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../../public/assets/fonts/Poppins/Poppins-Bold.ttf");
+  font-family: "Poppins";
+  src: url("../../public/assets/fonts/Poppins/Poppins-Bold.ttf");
 }
