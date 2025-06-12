@@ -6,10 +6,10 @@ import {
   ToolBar,
   MadeWith,
   Menus,
-  Weather,
   DateTime,
 } from "../../exports/components/exports";
 import { Window } from "./components/Window";
+import WeatherServerComponent from "./components/WeatherServerComponent";
 
 const Main: React.FC = () => {
   const [windowOpen, setWindowOpen] = useState<boolean>(false);
@@ -43,7 +43,7 @@ const Main: React.FC = () => {
           <DateTime />
           <div className="flex w-full md:justify-between max-sm:justify-center">
             <Menus callback={handleCallback} />
-            <Weather />
+            <WeatherServerComponent />
           </div>
           <MadeWith />
           <ToolBar callback={handleCallback} />

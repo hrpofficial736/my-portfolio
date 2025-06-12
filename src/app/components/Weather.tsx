@@ -5,6 +5,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { fetchUserLocation } from "../../../lib/geoLocationApi";
 import fetchWeatherFromApi from "../../../lib/weatherApi";
 import { ubuntuFont } from "./Menus";
+import { TbTemperature } from "react-icons/tb";
+
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState<{
@@ -16,6 +18,7 @@ export default function Weather() {
     async function fetchWeather() {
       const location = await fetchUserLocation();
       const dataFromApi = await fetchWeatherFromApi(location);
+      
       setWeatherData(() => {
         const updatedWeatherData = {
           temperature: Math.round(dataFromApi.weather.main.temp - 273.0),
@@ -34,10 +37,10 @@ export default function Weather() {
     <main
       className={`glassmorphism ${ubuntuFont.className} h-max px-3 py-3 absolute right-2 top-20 md:right-12 md:top-14 w-max flex flex-col gap-y-2 text-white`}
     >
-      <div className="flex gap-x-3 font-[Poiret] font-bold text-3xl ">
-        ☁️{" "}
+      <div className="flex gap-x-1 font-[Poiret] font-bold text-3xl ">
+        <TbTemperature />
         <div className="flex flex-col items-center">
-          {weatherData?.temperature ? weatherData?.temperature : 0} ° C{" "}
+          {weatherData?.temperature || 0} ° C{" "}
           <p className="font-semibold text-base font-sans">
             {weatherData?.description
               ? weatherData?.description
@@ -47,7 +50,7 @@ export default function Weather() {
       </div>
       <p className="flex gap-x-2 items-center justify-center">
         <CiLocationOn />
-        {locationInWords ? locationInWords : "Fetching your location..."}
+        {locationInWords || "Your location..."}
       </p>
     </main>
   );

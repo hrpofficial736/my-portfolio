@@ -7,6 +7,13 @@
   background-size: cover;
 }
 
+@layer utilities {
+  .f-c-row {
+    @apply flex justify-center items-center
+  }
+  }
+
+
 body::-webkit-scrollbar {
   display: none;
 }

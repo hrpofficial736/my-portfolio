@@ -11,12 +11,13 @@ import {
 import Image from "next/image";
 import { Tooltip } from "react-tooltip";
 import { ubuntuFont } from "./Menus";
+
 export const ToolBar: React.FC<{
   callback: () => void;
 }> = ({ callback }) => {
   return (
-    <section
-      className={`min-w-[400px] glassmorphism h-[80px] px-3 py-2 ${ubuntuFont.className} f-c-row gap-4 md:mb-5 max-md:fixed max-md:bottom-5`}
+    <main
+      className={`border-2 border-white ${ubuntuFont.className} flex items-center justify-center gap-4 rounded-3xl px-3 py-2 md:mb-5 max-md:fixed max-md:bottom-5`}
     >
       <Tooltip
         id="imageToolTip"
@@ -25,28 +26,25 @@ export const ToolBar: React.FC<{
         delayShow={200}
         style={{ backgroundColor: "black", borderRadius: "10px" }}
       />
-      <div
-        data-tooltip-id="imageToolTip"
-        data-tooltip-content={"My Resume"}
-        className="p-2 f-c-row rounded-2xl bg-gradient-to-b from-white to-white/70 cursor-pointer"
-      >
+      <div className="p-2 flex justify-center items-center rounded-2xl bg-gradient-to-b from-white to-white/70 cursor-pointer">
         <Image
           onClick={() => {
             window.open("assets/resume.pdf", "_blank");
           }}
           src={Pdf}
           alt="Resume"
+          data-tooltip-id="imageToolTip"
+          data-tooltip-content={"My Resume"}
           className="w-12 h-12"
         />
       </div>
-      <div
-        data-tooltip-id="imageToolTip"
-        data-tooltip-content={"Mail me"}
-        className="p-2 flex justify-center items-center rounded-2xl bg-indigo-700 cursor-pointer"
-      >
+
+      <div className="p-2 flex justify-center items-center rounded-2xl bg-indigo-700 cursor-pointer">
         <Image
           src={Mail}
           alt="Mail"
+          data-tooltip-id="imageToolTip"
+          data-tooltip-content={"Mail me"}
           onClick={() => {
             window.open(
               "https://mail.google.com/mail/?view=cm&fs=1&to=hrpofficial736@gmail.com&su=Hey, Harshit Raj Pandey!&body=Let's build a project...",
@@ -56,48 +54,42 @@ export const ToolBar: React.FC<{
           className="w-12 h-12"
         />
       </div>
-      <div
-        data-tooltip-id="imageToolTip"
-        data-tooltip-content={"My Projects"}
-        className="rounded-2xl p-3 flex justify-center items-center bg-gradient-to-b from-white to-blue-300 cursor-pointer"
-      >
+      <div className="rounded-2xl p-2 flex justify-center items-center bg-gradient-to-b from-white to-blue-300 cursor-pointer">
         <Image
           src={Web}
           alt="Projects"
           onClick={() => {
             callback();
           }}
-          className="w-10 h-10"
+          className="w-12 h-12"
+          data-tooltip-id="imageToolTip"
+          data-tooltip-content={"My Projects"}
         />
       </div>
-      <div
-        data-tooltip-id="imageToolTip"
-        data-tooltip-content={"Github"}
-        className="bg-white p-1 rounded-2xl bg-gradient-to-b from-white to-black/20 cursor-pointer"
-      >
+      <div className="p-2 flex justify-center items-center rounded-2xl bg-gradient-to-b from-white/60 to-white cursor-pointer">
         <Image
           src={Github}
           alt="Github"
           onClick={() => {
             window.open("https://github.com/hrpofficial736", "_blank");
           }}
-          className="w-14 h-14"
+          data-tooltip-id="imageToolTip"
+          data-tooltip-content={"Github"}
+          className="w-10 h-10"
         />
       </div>
-      <div
-        data-tooltip-id="imageToolTip"
-        data-tooltip-content={"Twitter"}
-        className="p-3 flex justify-center items-center rounded-2xl bg-gradient-to-br from-white to-white/80 cursor-pointer"
-      >
+      <div className="p-2 flex justify-center items-center rounded-2xl bg-gradient-to-br from-white to-white/80 cursor-pointer">
         <Image
           src={Twitter}
           alt="Twitter"
           onClick={() => {
             window.open("https://x.com/hrpofficial736", "_blank");
           }}
+          data-tooltip-id="imageToolTip"
+          data-tooltip-content={"Twitter"}
           className="w-10 h-10"
         />
       </div>
-    </section>
+    </main>
   );
 };
